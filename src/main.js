@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Component } from "react";
 // import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 // import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 //import { Route } from 'react-router';
@@ -9,23 +9,19 @@ import HomePage from "./homePage";
 import Test from "./Test";
 import { Route, Switch } from "react-router-dom";
 import MyCallbackPage from './app/oidc/callback'
-import { createBrowserHistory } from "history";
-
-const history = createBrowserHistory();
-
-export default function App() {
 
 
+export default class App extends Component {
+  static displayName = App.name;
+
+  render() {
     return (
-       
+    
         <Switch>
-          <Route  path="/dg" component={HomePage } />
-
-          <Route path="/callback" component={MyCallbackPage } />
- 
+          <Route path="/dg/home" component={Home } />
+          <Route path="/dg/test" component={Test } />
         </Switch>
-   
      
     );
-  
+  }
 }
